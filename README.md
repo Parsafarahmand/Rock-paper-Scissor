@@ -43,7 +43,7 @@ document.addEventListener('keyup', (d) => {
         refreshFunction();
 
     } else if (d.key == "a") {
-        alert('What the fuck')
+        alert('Click')
 
     }
 })
