@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-end Developement</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+        
+        .grid-container>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+            height: 600px;
+        }
+        
+        .items_box {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        
+        .images_contain {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        
+        .images_contain>img {
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+        }
+        /* .images_contain>img:hover{
+        animation: imageRotate 1s;
+      } */
+        
+        @keyframes imageRotate {
+            0% {
+                transform: rotateY(0deg);
+            }
+            50% {
+                transform: rotateY(90deg);
+            }
+            100% {
+                transform: rotateY(0deg);
+            }
+        }
+        
+        .result_container {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        button {
+            margin-left: auto;
+            height: 40px;
+            background-color: rgb(14, 165, 115);
+            color: aliceblue;
+            font-weight: bolder;
+            font-size: large;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="items_box">
+            <h1>Choose your weapon</h1>
+            <div class="images_contain">
+                <img src="./paper.png" class="img-items" alt="">
+                <img src="./rock.png" class="img-items" alt="">
+                <img src="./scissors.png" class="img-items" alt="">
+            </div>
+            <h2>cpu choosed : </h2>
+            <img src="./paper.png" class="img-cpu-choosed hidden" alt="">
+            <img src="./rock.png" class="img-cpu-choosed hidden" alt="">
+            <img src="./scissors.png" class="img-cpu-choosed hidden" alt="">
+        </div>
+        <div class="result_box">
+            <h1>points:</h1>
+            <div class="result_container">
+                <div class="user-point-container">
+                    <h2>USER:</h2>
+                    <div id="user-point">
+                        0
+                    </div>
+                </div>
+                <div class="cpu-point-container">
+                    <h2>CPU:</h2>
+                    <div id="cpu-point">
+                        0
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button>Refresh</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
